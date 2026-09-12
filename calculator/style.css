@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f4f9;
+}
+
+.calculator {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  width: 320px;
+}
+
+/* Expanded Display Screen Container */
+.display-container {
+  background-color: #222;
+  border-radius: 6px;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 90px;
+}
+
+/* Row to show last calculation equation */
+.history-screen {
+  color: #888;
+  font-size: 1rem;
+  text-align: right;
+  min-height: 1.2rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Main input/result screen */
+#display {
+  width: 100%;
+  background: transparent;
+  color: #fff;
+  font-size: 2.2rem;
+  text-align: right;
+  border: none;
+  outline: none;
+}
+
+/* CSS Grid layout for buttons */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.btn {
+  height: 50px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #e0e0e0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #d4d4d4;
+}
+
+.btn.operator {
+  background-color: #ff9500;
+  color: white;
+}
+
+.btn.operator:hover {
+  background-color: #e08500;
+}
+
+.btn.clear {
+  background-color: #ff3b30;
+  color: white;
+}
+
+.btn.clear:hover {
+  background-color: #d32f2f;
+}
+
+.btn.equal {
+  background-color: #34c759;
+  color: white;
+  grid-row: span 2;
+  height: 100%;
+}
+
+.btn.equal:hover {
+  background-color: #2da84e;
+}
+.btn.delete {
+  background-color: #ff9500;
+  color: white;
+}
+
+.btn.delete:hover {
+  background-color: #e08500;
+}
+
+/* Make 0 button span across if needed or keep default grid */
+.btn.zero {
+  grid-column: span 2;
+}
