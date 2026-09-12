@@ -1,0 +1,433 @@
+/* --- Global Styles & Reset --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #0f172a;
+  color: #e2e8f0;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- Hero Section & Entrance Animations --- */
+.hero {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/6/6e/A.P.J._Abdul_Kalam.jpg");
+  background-size: cover;
+  background-position: center top;
+  height: 100vh;
+  position: relative;
+}
+
+.hero-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0.7) 0%,
+    rgba(15, 23, 42, 0.95) 100%
+  );
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.badge {
+  background-color: #2563eb;
+  color: #ffffff;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.hero-content h1 {
+  font-family: "Merriweather", serif;
+  font-size: 3.5rem;
+  color: #ffffff;
+  margin-bottom: 15px;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content .subtitle {
+  font-size: 1.3rem;
+  color: #38bdf8;
+  margin-bottom: 30px;
+  font-weight: 300;
+}
+
+.btn-scroll {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: #38bdf8;
+  color: #0f172a;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+}
+
+.btn-scroll:hover {
+  background-color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+}
+
+/* Keyframe Animations for Hero */
+.fade-down {
+  animation: fadeInDown 1s ease forwards;
+}
+
+.fade-up {
+  animation: fadeInUp 1s ease 0.3s forwards;
+  opacity: 0;
+}
+
+.fade-up-delay {
+  animation: fadeInUp 1s ease 0.6s forwards;
+  opacity: 0;
+}
+
+.fade-up-delay-2 {
+  animation: fadeInUp 1s ease 0.9s forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- About Section --- */
+.about-section {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  padding: 80px 0;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h2,
+.section-title {
+  font-family: "Merriweather", serif;
+  font-size: 2.2rem;
+  color: #f8fafc;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.about-text h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #38bdf8, #2563eb);
+  margin-top: 10px;
+  border-radius: 2px;
+}
+
+.about-text p {
+  margin-bottom: 18px;
+  color: #94a3b8;
+  font-size: 1.05rem;
+}
+.about-image {
+  flex: 0 0 250px; /* Limits the column width */
+  display: flex;
+  justify-content: center;
+}
+
+.img-frame {
+  position: relative;
+  border-radius: 16px;
+  padding: 6px;
+  background: linear-gradient(135deg, #38bdf8, #2563eb);
+  box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
+  transition: transform 0.4s ease;
+}
+
+.img-frame img {
+  width: 200px; /* Fixed compact size */
+  height: 250px; /* Fixed height for clean proportions */
+  object-fit: cover; /* Prevents image stretching */
+  border-radius: 12px;
+  display: block;
+}
+
+.img-frame:hover {
+  transform: scale(1.03) rotate(1deg);
+}
+/* --- Animated Quote Banner --- */
+.quote-banner {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border: 1px solid #334155;
+  border-left: 6px solid #38bdf8;
+  padding: 50px 40px;
+  border-radius: 12px;
+  margin: 40px 0 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.quote-icon {
+  font-size: 4rem;
+  color: #38bdf8;
+  opacity: 0.3;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-family: serif;
+}
+
+.quote-content blockquote {
+  font-family: "Merriweather", serif;
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #f1f5f9;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+.quote-content cite {
+  font-size: 1.1rem;
+  color: #38bdf8;
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* --- Timeline Section --- */
+.timeline-section {
+  padding-bottom: 80px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  border-left: 3px solid #334155;
+  padding-left: 30px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -38px;
+  top: 5px;
+  width: 14px;
+  height: 14px;
+  background-color: #38bdf8;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #38bdf8;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(56, 189, 248, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(56, 189, 248, 0);
+  }
+}
+
+.timeline-content {
+  background-color: #1e293b;
+  padding: 20px 25px;
+  border-radius: 10px;
+  border: 1px solid #334155;
+  transition: transform 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateX(10px);
+  border-color: #38bdf8;
+}
+
+.timeline-content h3 {
+  color: #38bdf8;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.timeline-content p {
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+/* --- Qualities Grid --- */
+.qualities-section {
+  padding-bottom: 80px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background-color: #1e293b;
+  padding: 30px 25px;
+  border-radius: 12px;
+  border: 1px solid #334155;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  background-color: #24334d;
+  border-color: #38bdf8;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.icon-wrapper {
+  width: 55px;
+  height: 55px;
+  background-color: rgba(56, 189, 248, 0.1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .icon-wrapper {
+  transform: rotate(10deg) scale(1.1);
+}
+
+.card .icon {
+  font-size: 1.8rem;
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  color: #f8fafc;
+  margin-bottom: 12px;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #94a3b8;
+}
+
+/* --- Books Section --- */
+.books-section {
+  padding-bottom: 80px;
+}
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.book-card {
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  border: 1px solid #334155;
+  padding: 25px;
+  border-radius: 10px;
+  position: relative;
+  transition: border-color 0.3s ease;
+}
+
+.book-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: #2563eb;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.book-card:hover {
+  border-color: #38bdf8;
+}
+
+.book-card h4 {
+  font-size: 1.2rem;
+  color: #38bdf8;
+  margin-bottom: 8px;
+}
+
+.book-card p {
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+/* --- Footer --- */
+footer {
+  background-color: #0b0f19;
+  border-top: 1px solid #1e293b;
+  color: #64748b;
+  text-align: center;
+  padding: 30px 0;
+  font-size: 0.9rem;
+}
+
+/* --- Responsive Layout --- */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.3rem;
+  }
+
+  .about-section {
+    flex-direction: column;
+  }
+
+  .timeline {
+    padding-left: 20px;
+  }
+}
